@@ -1,5 +1,6 @@
-from pydantic import BaseModel
+from typing import Optional
 from fastapi import APIRouter
+from pydantic import BaseModel
 
 from app.llm.answer import generate_answer
 from app.retrieval.hybrid import hybrid_search
@@ -9,7 +10,7 @@ router = APIRouter()
 
 class QueryRequest(BaseModel):
     question: str
-    top_n: int = 5
+    top_n: Optional[int] = None
 
 
 @router.post("/query")

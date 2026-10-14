@@ -5,7 +5,7 @@ export const axiosInstance = axios.create({
   timeout: 60000,
 });
 
-// POST /upload - multipart form with the file
+// POST /upload - starts background processing, returns task_id
 export async function uploadDocument(file) {
   const form = new FormData();
   form.append("file", file);
@@ -13,9 +13,19 @@ export async function uploadDocument(file) {
   return data;
 }
 
+// GET /upload/status/:taskId - poll processing status
+export async function getUploadStatus(taskId) {
+  const { data } = await axiosInstance.get(`/upload/status/${taskId}`);
+  return data;
+}
+
 // POST /ask - hybrid retrieval + grounded answer
-export async function askQuestion(question, top_n = 5) {
-  const { data } = await axiosInstance.post("/ask", { question, top_n });
+export async function askQuestion(question, top_n = 'auto') {
+  const payload = { question };
+  if (top_n && top_n !== 'auto') {
+    payload.top_n = Number(top_n);
+  }
+  const { data } = await axiosInstance.post("/ask", payload);
   return data;
 }
 

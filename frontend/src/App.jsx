@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import UploadPanel from './components/UploadPanel.jsx'
 import ChatPanel from './components/ChatPanel.jsx'
-import { checkHealth } from './api.js'
+
 
 // Store theme in localStorage
 function getInitialTheme() {
@@ -10,7 +10,6 @@ function getInitialTheme() {
 
 export default function App() {
   const [theme, setTheme] = useState(getInitialTheme)
-  const [backendOk, setBackendOk] = useState(null)
   const [documents, setDocuments] = useState([])
 
   // Apply theme
@@ -18,11 +17,6 @@ export default function App() {
     document.documentElement.setAttribute('data-theme', theme)
     localStorage.setItem('sanes-theme', theme)
   }, [theme])
-
-  // Check backend health
-  useEffect(() => {
-    checkHealth().then(setBackendOk).catch(() => setBackendOk(false))
-  }, [])
 
   function toggleTheme() {
     setTheme(t => t === 'light' ? 'dark' : 'light')
@@ -54,12 +48,6 @@ export default function App() {
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          {/* Backend status */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 12, color: 'var(--text-muted)' }}>
-            <span className={`dot ${backendOk === null ? 'dot-yellow' : backendOk ? 'dot-green' : 'dot-red'}`} />
-            {backendOk === null ? 'Connecting...' : backendOk ? 'Backend connected' : 'Backend offline'}
-          </div>
-
           {/* Theme toggle */}
           <button
             id="theme-toggle"

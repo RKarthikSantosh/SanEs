@@ -52,13 +52,18 @@ def generate_answer(question: str, passages: list[dict], model: str | None = Non
     for number in cited:
         passage = passages[number - 1]
         metadata = passage.get("metadata") or {}
+        score = passage.get("rerank_score")
+        if score is None:
+            score = passage.get("score")
         citations.append(
             {
                 "number": number,
                 "id": passage.get("id"),
                 "filename": metadata.get("filename"),
                 "page": metadata.get("page"),
+                "text": passage.get("text", ""),
                 "snippet": (passage.get("text") or "")[:300],
+                "score": float(score) if score is not None else None,
             }
         )
 
