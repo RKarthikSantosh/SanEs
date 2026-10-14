@@ -1,0 +1,17 @@
+fiqa: 57638 docs, 200 queries
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 7346.17it/s]
+  50/200 queries
+  100/200 queries
+  150/200 queries
+  200/200 queries
+
+config             nDCG@10   Recall@5  Recall@10  Recall@20     MRR@10  Success@5 latency_ms_mean latency_ms_p95
+bm25                0.2349     0.2142     0.3067     0.3814     0.2810     0.3700   166.5854   270.5885
+dense               0.4200     0.4201     0.5136     0.5732     0.4896     0.6350    24.4319    31.5396
+hybrid              0.3768     0.4002     0.5015     0.5702     0.4384     0.6300   191.3511   297.0595
+hybrid_rerank       0.4760     0.4806     0.5252     0.5702     0.5650     0.6900   842.1945  1042.0295
+significance: {'hybrid_vs_bm25': {'mean_diff': 0.14190282126506804, 't_test_p': 3.948914346490463e-17, 'wilcoxon_p': 4.720668453630038e-15, 'wins': 108, 'ties': 74, 'losses': 18}, 'hybrid_vs_dense': {'mean_diff': -0.04318761990639097, 't_test_p': 0.003623096553790642, 'wilcoxon_p': 0.004735212289321774, 'wins': 46, 'ties': 70, 'losses': 84}, 'hybrid_rerank_vs_bm25': {'mean_diff': 0.2411671935107899, 't_test_p': 1.0406157478980423e-21, 'wilcoxon_p': 5.524054910643255e-19, 'wins': 121, 'ties': 67, 'losses': 12}, 'hybrid_rerank_vs_dense': {'mean_diff': 0.056076752339330904, 't_test_p': 0.0017364958112811295, 'wilcoxon_p': 0.005144929012424864, 'wins': 73, 'ties': 81, 'losses': 46}}
+complementarity: {'mean_top10_overlap': 0.195, 'queries_only_bm25_finds_relevant_in_top20': 7, 'queries_only_dense_finds_relevant_in_top20': 51, 'queries_neither_finds_relevant_in_top20': 35}
+by type: {'exact_term': {'count': 59, 'bm25': 0.3277460005746116, 'dense': 0.48133889017206616, 'hybrid': 0.4470018811714302, 'hybrid_rerank': 0.536933486304945}, 'natural_language': {'count': 141, 'bm25': 0.19601497510187796, 'dense': 0.3942852428184877, 'hybrid': 0.3473941757955043, 'hybrid_rerank': 0.45056374846406444}}
+saved /home/eswar/major-project/SanEs-Hybrid-Retrieval-Enterprise-Document-Intelligence-Engine/backend/experiments/results/retrieval_fiqa.json

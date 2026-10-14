@@ -1,0 +1,89 @@
+{
+  "dataset": "squad-v1.1-dev",
+  "sample": 45,
+  "context_k": 5,
+  "summary": {
+    "bm25": {
+      "questions": 45,
+      "Hit@1": 0.6888888888888889,
+      "Hit@5": 0.8666666666666667,
+      "MRR@5": 0.7648148148148147,
+      "AnswerAccuracy": 0.8444444444444444,
+      "TokenF1": 0.28101012238249606,
+      "GoldCitationRate": 0.8,
+      "AbstentionRate": 0.08888888888888889,
+      "Faithfulness": 0.9829268292682927,
+      "faithfulness_judged": 41,
+      "RetrievalErrors": 5,
+      "GenerationErrors": 2,
+      "generation_seconds_mean": 5.736356981422109
+    },
+    "dense": {
+      "questions": 45,
+      "Hit@1": 0.5111111111111111,
+      "Hit@5": 0.9111111111111111,
+      "MRR@5": 0.6688888888888889,
+      "AnswerAccuracy": 0.9111111111111111,
+      "TokenF1": 0.3113025726051597,
+      "GoldCitationRate": 0.8888888888888888,
+      "AbstentionRate": 0.06666666666666667,
+      "Faithfulness": 0.9880952380952381,
+      "faithfulness_judged": 42,
+      "RetrievalErrors": 3,
+      "GenerationErrors": 1,
+      "generation_seconds_mean": 6.948556998244445
+    },
+    "hybrid": {
+      "questions": 45,
+      "Hit@1": 0.7111111111111111,
+      "Hit@5": 0.9777777777777777,
+      "MRR@5": 0.7985185185185186,
+      "AnswerAccuracy": 0.9111111111111111,
+      "TokenF1": 0.316777198388351,
+      "GoldCitationRate": 0.8666666666666667,
+      "AbstentionRate": 0.044444444444444446,
+      "Faithfulness": null,
+      "faithfulness_judged": 0,
+      "RetrievalErrors": 1,
+      "GenerationErrors": 3,
+      "generation_seconds_mean": 8.116245732933264
+    },
+    "hybrid_rerank": {
+      "questions": 45,
+      "Hit@1": 0.8888888888888888,
+      "Hit@5": 0.9777777777777777,
+      "MRR@5": 0.9296296296296295,
+      "AnswerAccuracy": 0.8666666666666667,
+      "TokenF1": 0.27094481256552805,
+      "GoldCitationRate": 0.8888888888888888,
+      "AbstentionRate": 0.044444444444444446,
+      "Faithfulness": 0.9883720930232558,
+      "faithfulness_judged": 43,
+      "RetrievalErrors": 0,
+      "GenerationErrors": 6,
+      "generation_seconds_mean": 7.658152215133325
+    }
+  },
+  "significance": {
+    "hybrid_vs_bm25": {
+      "fixed": 6,
+      "broke": 3,
+      "mcnemar_p": 0.5078125
+    },
+    "hybrid_vs_dense": {
+      "fixed": 1,
+      "broke": 1,
+      "mcnemar_p": 1.0
+    },
+    "hybrid_rerank_vs_bm25": {
+      "fixed": 3,
+      "broke": 2,
+      "mcnemar_p": 1.0
+    },
+    "hybrid_rerank_vs_dense": {
+      "fixed": 3,
+      "broke": 5,
+      "mcnemar_p": 0.7265625
+    }
+  }
+}

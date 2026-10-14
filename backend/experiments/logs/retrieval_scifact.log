@@ -1,0 +1,19 @@
+scifact: 5183 docs, 300 queries
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 6542.39it/s]
+  50/300 queries
+  100/300 queries
+  150/300 queries
+  200/300 queries
+  250/300 queries
+  300/300 queries
+
+config             nDCG@10   Recall@5  Recall@10  Recall@20     MRR@10  Success@5 latency_ms_mean latency_ms_p95
+bm25                0.6702     0.7276     0.7939     0.8274     0.6387     0.7533    21.8745    41.6236
+dense               0.6451     0.7379     0.7833     0.8373     0.6047     0.7533    95.0004   321.3786
+hybrid              0.6924     0.7654     0.8493     0.8917     0.6485     0.7833   117.0253   347.6677
+hybrid_rerank       0.7705     0.8160     0.8739     0.8917     0.7466     0.8333  1205.1680  1870.1003
+significance: {'hybrid_vs_bm25': {'mean_diff': 0.022141666957038404, 't_test_p': 0.05993552724570108, 'wilcoxon_p': 0.0937318182571393, 'wins': 66, 'ties': 186, 'losses': 48}, 'hybrid_vs_dense': {'mean_diff': 0.047274056026901976, 't_test_p': 5.641951730617442e-05, 'wilcoxon_p': 6.194907262568285e-05, 'wins': 76, 'ties': 190, 'losses': 34}, 'hybrid_rerank_vs_bm25': {'mean_diff': 0.10032510660030404, 't_test_p': 1.0346385216406194e-10, 'wilcoxon_p': 3.166707903056329e-10, 'wins': 89, 'ties': 187, 'losses': 24}, 'hybrid_rerank_vs_dense': {'mean_diff': 0.12545749567016762, 't_test_p': 2.1678294760940817e-13, 'wilcoxon_p': 1.0891891389591176e-12, 'wins': 93, 'ties': 180, 'losses': 27}}
+complementarity: {'mean_top10_overlap': 0.3293333333333333, 'queries_only_bm25_finds_relevant_in_top20': 24, 'queries_only_dense_finds_relevant_in_top20': 25, 'queries_neither_finds_relevant_in_top20': 22}
+by type: {'exact_term': {'count': 164, 'bm25': 0.671989931105343, 'dense': 0.663778338030543, 'hybrid': 0.7036072412175127, 'hybrid_rerank': 0.7723821862199767}, 'natural_language': {'count': 136, 'bm25': 0.6680725269364418, 'dense': 0.6225356485784135, 'hybrid': 0.6787876830299394, 'hybrid_rerank': 0.7683166603282895}}
+saved /home/eswar/major-project/SanEs-Hybrid-Retrieval-Enterprise-Document-Intelligence-Engine/backend/experiments/results/retrieval_scifact.json

@@ -1,0 +1,4 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 16667.18it/s]
+saved /home/eswar/major-project/SanEs-Hybrid-Retrieval-Enterprise-Document-Intelligence-Engine/backend/experiments/cache/emb_squad_dev_2067.npy (2067, 384) 59 s
+saved /home/eswar/major-project/SanEs-Hybrid-Retrieval-Enterprise-Document-Intelligence-Engine/backend/experiments/cache/emb_fiqa_57638.npy (57638, 384) 1765 s

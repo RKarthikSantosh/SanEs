@@ -1,0 +1,141 @@
+{
+  "dataset": "nfcorpus",
+  "documents": 3633,
+  "queries": 323,
+  "depth": 20,
+  "index_build_seconds": {
+    "bm25": 0.5999199919997409,
+    "embeddings": 285.02515849700103
+  },
+  "summary": {
+    "bm25": {
+      "nDCG@10": 0.3139033019125471,
+      "Recall@5": 0.12089414030174328,
+      "Recall@10": 0.15500759066459016,
+      "Recall@20": 0.17746635445904535,
+      "MRR@10": 0.5248513440463906,
+      "Success@5": 0.6408668730650154,
+      "latency_ms_mean": 5.767153300245243,
+      "latency_ms_p95": 9.62387679992389
+    },
+    "dense": {
+      "nDCG@10": 0.31599077686001786,
+      "Recall@5": 0.11958585040292335,
+      "Recall@10": 0.15498797328057845,
+      "Recall@20": 0.18873248908582585,
+      "MRR@10": 0.5045579635362917,
+      "Success@5": 0.6470588235294118,
+      "latency_ms_mean": 34.272769383878256,
+      "latency_ms_p95": 99.66485109925992
+    },
+    "hybrid": {
+      "nDCG@10": 0.3381629395727638,
+      "Recall@5": 0.13217940792761124,
+      "Recall@10": 0.1675701090124926,
+      "Recall@20": 0.2084617576613648,
+      "MRR@10": 0.5478979311022655,
+      "Success@5": 0.6501547987616099,
+      "latency_ms_mean": 40.2539646128679,
+      "latency_ms_p95": 107.93912449917104
+    },
+    "hybrid_rerank": {
+      "nDCG@10": 0.3768282115056671,
+      "Recall@5": 0.14322663941125624,
+      "Recall@10": 0.1838963806977287,
+      "Recall@20": 0.2084617576613648,
+      "MRR@10": 0.5817374318148313,
+      "Success@5": 0.6904024767801857,
+      "latency_ms_mean": 1256.089741157697,
+      "latency_ms_p95": 2181.9384271009753
+    }
+  },
+  "significance": {
+    "hybrid_vs_bm25": {
+      "mean_diff": 0.02425963766021664,
+      "t_test_p": 0.00022738715699652966,
+      "wilcoxon_p": 0.0004314310885405048,
+      "wins": 115,
+      "ties": 127,
+      "losses": 81
+    },
+    "hybrid_vs_dense": {
+      "mean_diff": 0.02217216271274588,
+      "t_test_p": 0.002459983865467866,
+      "wilcoxon_p": 0.012838993204143702,
+      "wins": 114,
+      "ties": 122,
+      "losses": 87
+    },
+    "hybrid_rerank_vs_bm25": {
+      "mean_diff": 0.0629249095931199,
+      "t_test_p": 1.5597930156253825e-12,
+      "wilcoxon_p": 1.7342654572003364e-11,
+      "wins": 134,
+      "ties": 123,
+      "losses": 66
+    },
+    "hybrid_rerank_vs_dense": {
+      "mean_diff": 0.060837434645649134,
+      "t_test_p": 1.9548944467264878e-11,
+      "wilcoxon_p": 2.031570713073392e-11,
+      "wins": 147,
+      "ties": 110,
+      "losses": 66
+    }
+  },
+  "complementarity": {
+    "mean_top10_overlap": 0.2727554179566563,
+    "queries_only_bm25_finds_relevant_in_top20": 19,
+    "queries_only_dense_finds_relevant_in_top20": 22,
+    "queries_neither_finds_relevant_in_top20": 69
+  },
+  "by_query_type": {
+    "exact_term": {
+      "count": 19,
+      "bm25": 0.518257883335145,
+      "dense": 0.4916140978622523,
+      "hybrid": 0.5162705971136299,
+      "hybrid_rerank": 0.5745729710435961
+    },
+    "natural_language": {
+      "count": 304,
+      "bm25": 0.30113114057363477,
+      "dense": 0.3050143192973782,
+      "hybrid": 0.32703121097645965,
+      "hybrid_rerank": 0.3644691640345465
+    }
+  },
+  "examples": [
+    {
+      "query": "Dr. Dean Ornish",
+      "bm25_hit@5": 0.0,
+      "dense_hit@5": 1.0
+    },
+    {
+      "query": "Exploiting Autophagy to Live Longer",
+      "bm25_hit@5": 0.0,
+      "dense_hit@5": 1.0
+    },
+    {
+      "query": "grapes",
+      "bm25_hit@5": 1.0,
+      "dense_hit@5": 0.0
+    },
+    {
+      "query": "Harvard Physicians\u2019 Study II",
+      "bm25_hit@5": 1.0,
+      "dense_hit@5": 0.0
+    },
+    {
+      "query": "hormonal dysfunction",
+      "bm25_hit@5": 1.0,
+      "dense_hit@5": 0.0
+    },
+    {
+      "query": "kohlrabi",
+      "bm25_hit@5": 1.0,
+      "dense_hit@5": 0.0
+    }
+  ],
+  "cohere_calls_this_run": 323
+}

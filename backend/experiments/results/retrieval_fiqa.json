@@ -1,0 +1,141 @@
+{
+  "dataset": "fiqa",
+  "documents": 57638,
+  "queries": 200,
+  "depth": 20,
+  "index_build_seconds": {
+    "bm25": 3.930084435000026,
+    "embeddings": 0.22100269499969727
+  },
+  "summary": {
+    "bm25": {
+      "nDCG@10": 0.23487562761633438,
+      "Recall@5": 0.21415487290487292,
+      "Recall@10": 0.3066592019092019,
+      "Recall@20": 0.3813776917526917,
+      "MRR@10": 0.2809781746031746,
+      "Success@5": 0.37,
+      "latency_ms_mean": 166.5854146899619,
+      "latency_ms_p95": 270.58854370070543
+    },
+    "dense": {
+      "nDCG@10": 0.4199660687877934,
+      "Recall@5": 0.420099802974803,
+      "Recall@10": 0.5135720806970806,
+      "Recall@20": 0.5731543734043734,
+      "MRR@10": 0.4896488095238095,
+      "Success@5": 0.635,
+      "latency_ms_mean": 24.431910199909908,
+      "latency_ms_p95": 31.53960154977539
+    },
+    "hybrid": {
+      "nDCG@10": 0.37677844888140244,
+      "Recall@5": 0.4001525835275836,
+      "Recall@10": 0.5015281246531247,
+      "Recall@20": 0.5702226245976246,
+      "MRR@10": 0.43843452380952386,
+      "Success@5": 0.63,
+      "latency_ms_mean": 191.35111234480064,
+      "latency_ms_p95": 297.05945310015517
+    },
+    "hybrid_rerank": {
+      "nDCG@10": 0.47604282112712426,
+      "Recall@5": 0.4806329226329226,
+      "Recall@10": 0.5251767538017539,
+      "Recall@20": 0.5702226245976246,
+      "MRR@10": 0.5650198412698412,
+      "Success@5": 0.69,
+      "latency_ms_mean": 842.1944623598029,
+      "latency_ms_p95": 1042.0295013032953
+    }
+  },
+  "significance": {
+    "hybrid_vs_bm25": {
+      "mean_diff": 0.14190282126506804,
+      "t_test_p": 3.948914346490463e-17,
+      "wilcoxon_p": 4.720668453630038e-15,
+      "wins": 108,
+      "ties": 74,
+      "losses": 18
+    },
+    "hybrid_vs_dense": {
+      "mean_diff": -0.04318761990639097,
+      "t_test_p": 0.003623096553790642,
+      "wilcoxon_p": 0.004735212289321774,
+      "wins": 46,
+      "ties": 70,
+      "losses": 84
+    },
+    "hybrid_rerank_vs_bm25": {
+      "mean_diff": 0.2411671935107899,
+      "t_test_p": 1.0406157478980423e-21,
+      "wilcoxon_p": 5.524054910643255e-19,
+      "wins": 121,
+      "ties": 67,
+      "losses": 12
+    },
+    "hybrid_rerank_vs_dense": {
+      "mean_diff": 0.056076752339330904,
+      "t_test_p": 0.0017364958112811295,
+      "wilcoxon_p": 0.005144929012424864,
+      "wins": 73,
+      "ties": 81,
+      "losses": 46
+    }
+  },
+  "complementarity": {
+    "mean_top10_overlap": 0.195,
+    "queries_only_bm25_finds_relevant_in_top20": 7,
+    "queries_only_dense_finds_relevant_in_top20": 51,
+    "queries_neither_finds_relevant_in_top20": 35
+  },
+  "by_query_type": {
+    "exact_term": {
+      "count": 59,
+      "bm25": 0.3277460005746116,
+      "dense": 0.48133889017206616,
+      "hybrid": 0.4470018811714302,
+      "hybrid_rerank": 0.536933486304945
+    },
+    "natural_language": {
+      "count": 141,
+      "bm25": 0.19601497510187796,
+      "dense": 0.3942852428184877,
+      "hybrid": 0.3473941757955043,
+      "hybrid_rerank": 0.45056374846406444
+    }
+  },
+  "examples": [
+    {
+      "query": "Investing/business with other people's money: How does it work?",
+      "bm25_hit@5": 0.0,
+      "dense_hit@5": 1.0
+    },
+    {
+      "query": "Explain the details and benefits of rebalancing a retirement portfolio?",
+      "bm25_hit@5": 1.0,
+      "dense_hit@5": 0.0
+    },
+    {
+      "query": "Probablity of touching In the money vs expiring in the money for an american option",
+      "bm25_hit@5": 0.0,
+      "dense_hit@5": 1.0
+    },
+    {
+      "query": "How common is \u201cpass-through\u201d health insurance?",
+      "bm25_hit@5": 0.0,
+      "dense_hit@5": 1.0
+    },
+    {
+      "query": "How can I calculate a \u201crunning\u201d return using XIRR in a spreadsheet?",
+      "bm25_hit@5": 0.0,
+      "dense_hit@5": 1.0
+    },
+    {
+      "query": "Pay off credit card debt or earn employer 401(k) match?",
+      "bm25_hit@5": 0.0,
+      "dense_hit@5": 1.0
+    }
+  ],
+  "cohere_calls_this_run": 200
+}

@@ -1,0 +1,93 @@
+SQuAD corpus: 2067 paragraphs, 60 sampled questions
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 5311.86it/s]
+  1/60 questions (0 new Cohere calls)
+  2/60 questions (0 new Cohere calls)
+  3/60 questions (0 new Cohere calls)
+  4/60 questions (0 new Cohere calls)
+  5/60 questions (0 new Cohere calls)
+  6/60 questions (0 new Cohere calls)
+  7/60 questions (0 new Cohere calls)
+  8/60 questions (0 new Cohere calls)
+  9/60 questions (0 new Cohere calls)
+  10/60 questions (0 new Cohere calls)
+  11/60 questions (0 new Cohere calls)
+  12/60 questions (0 new Cohere calls)
+  13/60 questions (0 new Cohere calls)
+  14/60 questions (0 new Cohere calls)
+  15/60 questions (0 new Cohere calls)
+  16/60 questions (0 new Cohere calls)
+  17/60 questions (0 new Cohere calls)
+  18/60 questions (0 new Cohere calls)
+  19/60 questions (1 new Cohere calls)
+  20/60 questions (2 new Cohere calls)
+  21/60 questions (3 new Cohere calls)
+  22/60 questions (4 new Cohere calls)
+  23/60 questions (5 new Cohere calls)
+  24/60 questions (6 new Cohere calls)
+  25/60 questions (7 new Cohere calls)
+  26/60 questions (8 new Cohere calls)
+  27/60 questions (9 new Cohere calls)
+  28/60 questions (10 new Cohere calls)
+  29/60 questions (11 new Cohere calls)
+  30/60 questions (12 new Cohere calls)
+  31/60 questions (13 new Cohere calls)
+  32/60 questions (14 new Cohere calls)
+  33/60 questions (15 new Cohere calls)
+  34/60 questions (16 new Cohere calls)
+  35/60 questions (17 new Cohere calls)
+  36/60 questions (18 new Cohere calls)
+  37/60 questions (19 new Cohere calls)
+  38/60 questions (20 new Cohere calls)
+  39/60 questions (21 new Cohere calls)
+  40/60 questions (22 new Cohere calls)
+  41/60 questions (23 new Cohere calls)
+  42/60 questions (24 new Cohere calls)
+  43/60 questions (25 new Cohere calls)
+  44/60 questions (26 new Cohere calls)
+  45/60 questions (27 new Cohere calls)
+Traceback (most recent call last):
+  File "/home/eswar/major-project/SanEs-Hybrid-Retrieval-Enterprise-Document-Intelligence-Engine/backend/app/llm/groq_llm.py", line 49, in invoke_with_fallback
+    return get_llm(api_key=key, model=model).invoke(messages).content
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eswar/major-project/SanEs-Hybrid-Retrieval-Enterprise-Document-Intelligence-Engine/backend/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 488, in invoke
+    self.generate_prompt(
+  File "/home/eswar/major-project/SanEs-Hybrid-Retrieval-Enterprise-Document-Intelligence-Engine/backend/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1877, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eswar/major-project/SanEs-Hybrid-Retrieval-Enterprise-Document-Intelligence-Engine/backend/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1684, in generate
+    self._generate_with_cache(
+  File "/home/eswar/major-project/SanEs-Hybrid-Retrieval-Enterprise-Document-Intelligence-Engine/backend/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 2022, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/eswar/major-project/SanEs-Hybrid-Retrieval-Enterprise-Document-Intelligence-Engine/backend/.venv/lib/python3.12/site-packages/langchain_groq/chat_models.py", line 627, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eswar/major-project/SanEs-Hybrid-Retrieval-Enterprise-Document-Intelligence-Engine/backend/.venv/lib/python3.12/site-packages/groq/resources/chat/completions.py", line 461, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/eswar/major-project/SanEs-Hybrid-Retrieval-Enterprise-Document-Intelligence-Engine/backend/.venv/lib/python3.12/site-packages/groq/_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eswar/major-project/SanEs-Hybrid-Retrieval-Enterprise-Document-Intelligence-Engine/backend/.venv/lib/python3.12/site-packages/groq/_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01km56905bf1rrggg5xjf6yz0p` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199337, Requested 1065. Please try again in 2m53.664s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/eswar/major-project/SanEs-Hybrid-Retrieval-Enterprise-Document-Intelligence-Engine/backend/experiments/run_e2e.py", line 208, in <module>
+    main()
+  File "/home/eswar/major-project/SanEs-Hybrid-Retrieval-Enterprise-Document-Intelligence-Engine/backend/experiments/run_e2e.py", line 200, in main
+    generate()
+  File "/home/eswar/major-project/SanEs-Hybrid-Retrieval-Enterprise-Document-Intelligence-Engine/backend/experiments/run_e2e.py", line 64, in generate
+    result = generate_answer(question, passages)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eswar/major-project/SanEs-Hybrid-Retrieval-Enterprise-Document-Intelligence-Engine/backend/app/llm/answer.py", line 48, in generate_answer
+    answer = invoke_with_fallback(messages, model=model).strip()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eswar/major-project/SanEs-Hybrid-Retrieval-Enterprise-Document-Intelligence-Engine/backend/app/llm/groq_llm.py", line 57, in invoke_with_fallback
+    raise RuntimeError(f"Groq still failing after {max_rounds} rounds") from last_error
+RuntimeError: Groq still failing after 6 rounds

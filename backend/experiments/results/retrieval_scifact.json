@@ -1,0 +1,141 @@
+{
+  "dataset": "scifact",
+  "documents": 5183,
+  "queries": 300,
+  "depth": 20,
+  "index_build_seconds": {
+    "bm25": 0.5565689839995684,
+    "embeddings": 0.015809127000466106
+  },
+  "summary": {
+    "bm25": {
+      "nDCG@10": 0.6702140412154411,
+      "Recall@5": 0.7276111111111111,
+      "Recall@10": 0.7939444444444445,
+      "Recall@20": 0.8273888888888888,
+      "MRR@10": 0.6386917989417988,
+      "Success@5": 0.7533333333333333,
+      "latency_ms_mean": 21.87449125999592,
+      "latency_ms_p95": 41.62363824948443
+    },
+    "dense": {
+      "nDCG@10": 0.6450816521455774,
+      "Recall@5": 0.7379444444444444,
+      "Recall@10": 0.7833333333333333,
+      "Recall@20": 0.8373333333333333,
+      "MRR@10": 0.6047248677248678,
+      "Success@5": 0.7533333333333333,
+      "latency_ms_mean": 95.00035445666678,
+      "latency_ms_p95": 321.3786374003121
+    },
+    "hybrid": {
+      "nDCG@10": 0.6923557081724795,
+      "Recall@5": 0.7654444444444444,
+      "Recall@10": 0.8493333333333333,
+      "Recall@20": 0.8916666666666667,
+      "MRR@10": 0.648515873015873,
+      "Success@5": 0.7833333333333333,
+      "latency_ms_mean": 117.02533534999324,
+      "latency_ms_p95": 347.6677045003726
+    },
+    "hybrid_rerank": {
+      "nDCG@10": 0.7705391478157452,
+      "Recall@5": 0.8160000000000001,
+      "Recall@10": 0.8738888888888889,
+      "Recall@20": 0.8916666666666667,
+      "MRR@10": 0.7465714285714286,
+      "Success@5": 0.8333333333333334,
+      "latency_ms_mean": 1205.1679844999883,
+      "latency_ms_p95": 1870.1003030002087
+    }
+  },
+  "significance": {
+    "hybrid_vs_bm25": {
+      "mean_diff": 0.022141666957038404,
+      "t_test_p": 0.05993552724570108,
+      "wilcoxon_p": 0.0937318182571393,
+      "wins": 66,
+      "ties": 186,
+      "losses": 48
+    },
+    "hybrid_vs_dense": {
+      "mean_diff": 0.047274056026901976,
+      "t_test_p": 5.641951730617442e-05,
+      "wilcoxon_p": 6.194907262568285e-05,
+      "wins": 76,
+      "ties": 190,
+      "losses": 34
+    },
+    "hybrid_rerank_vs_bm25": {
+      "mean_diff": 0.10032510660030404,
+      "t_test_p": 1.0346385216406194e-10,
+      "wilcoxon_p": 3.166707903056329e-10,
+      "wins": 89,
+      "ties": 187,
+      "losses": 24
+    },
+    "hybrid_rerank_vs_dense": {
+      "mean_diff": 0.12545749567016762,
+      "t_test_p": 2.1678294760940817e-13,
+      "wilcoxon_p": 1.0891891389591176e-12,
+      "wins": 93,
+      "ties": 180,
+      "losses": 27
+    }
+  },
+  "complementarity": {
+    "mean_top10_overlap": 0.3293333333333333,
+    "queries_only_bm25_finds_relevant_in_top20": 24,
+    "queries_only_dense_finds_relevant_in_top20": 25,
+    "queries_neither_finds_relevant_in_top20": 22
+  },
+  "by_query_type": {
+    "exact_term": {
+      "count": 164,
+      "bm25": 0.671989931105343,
+      "dense": 0.663778338030543,
+      "hybrid": 0.7036072412175127,
+      "hybrid_rerank": 0.7723821862199767
+    },
+    "natural_language": {
+      "count": 136,
+      "bm25": 0.6680725269364418,
+      "dense": 0.6225356485784135,
+      "hybrid": 0.6787876830299394,
+      "hybrid_rerank": 0.7683166603282895
+    }
+  },
+  "examples": [
+    {
+      "query": "Recurrent mutations occur frequently within CTCF anchor sites adjacent to oncogenes.",
+      "bm25_hit@5": 1.0,
+      "dense_hit@5": 0.0
+    },
+    {
+      "query": "Silencing of Bcl2 is important for the maintenance and progression of tumors.",
+      "bm25_hit@5": 0.0,
+      "dense_hit@5": 1.0
+    },
+    {
+      "query": "Taking 400mg of \u03b1-tocopheryl acetate helps to prevent prostate cancer.",
+      "bm25_hit@5": 0.0,
+      "dense_hit@5": 1.0
+    },
+    {
+      "query": "The PRR MDA5 is a sensor of RNA virus infection.",
+      "bm25_hit@5": 1.0,
+      "dense_hit@5": 0.0
+    },
+    {
+      "query": "The amount of publicly available DNA data doubles every 10 years.",
+      "bm25_hit@5": 0.0,
+      "dense_hit@5": 1.0
+    },
+    {
+      "query": "The myocardial lineage develops from cardiac progenitors of mesodermal origin.",
+      "bm25_hit@5": 0.0,
+      "dense_hit@5": 1.0
+    }
+  ],
+  "cohere_calls_this_run": 269
+}

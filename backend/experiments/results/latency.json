@@ -1,0 +1,38 @@
+{
+  "scifact": {
+    "documents": 5183,
+    "queries": 300,
+    "bm25_ms": 51.3770454833381,
+    "dense_ms": 59.2522507333221,
+    "fusion_ms": 0.27810919000330614,
+    "hybrid_sequential_ms": 110.90740540666351,
+    "hybrid_parallel_ms": 59.530359923325406,
+    "rerank_ms": 1088.1426491499951,
+    "rerank_ms_median": 995.6290110003465,
+    "bm25_index_build_s": 0.5635359440002503
+  },
+  "nfcorpus": {
+    "documents": 3633,
+    "queries": 323,
+    "bm25_ms": 20.87659733745458,
+    "dense_ms": 81.54905439323416,
+    "fusion_ms": 0.26644912383741853,
+    "hybrid_sequential_ms": 102.69210085452616,
+    "hybrid_parallel_ms": 81.81550351707158,
+    "rerank_ms": 1215.835776544829,
+    "rerank_ms_median": 1172.405102999619,
+    "bm25_index_build_s": 0.4410338559991942
+  },
+  "fiqa": {
+    "documents": 57638,
+    "queries": 200,
+    "bm25_ms": 193.24142680506156,
+    "dense_ms": 20.82885180496305,
+    "fusion_ms": 0.24256936000710994,
+    "hybrid_sequential_ms": 214.31284797003173,
+    "hybrid_parallel_ms": 193.48399616506867,
+    "rerank_ms": 650.8433500150022,
+    "rerank_ms_median": 658.568920000107,
+    "bm25_index_build_s": 3.896024183000918
+  }
+}

@@ -1,13 +1,6 @@
-import os
 from typing import Any
 
-try:
-    from dotenv import load_dotenv
-except ImportError:  # pragma: no cover - optional dependency
-    def load_dotenv() -> bool:
-        return False
-
-load_dotenv()
+from app.config import get_settings
 
 try:
     import cohere
@@ -15,20 +8,16 @@ except ImportError:  # pragma: no cover - optional dependency
     cohere = None
 
 
+# Reranks candidates with Cohere if available; falls back to original order otherwise.
 def rerank_candidates(question: str, candidates: list[dict[str, Any]], top_n: int = 5) -> list[dict[str, Any]]:
-    """Rerank merged retrieval candidates with Cohere when available.
-
-    Falls back to the original candidate ordering when the package or API key is not
-    configured so the endpoint remains functional in local development.
-    """
-
     if not candidates:
         return []
 
     if not question:
         return candidates[:top_n]
 
-    api_key = os.getenv("COHERE_API_KEY")
+    settings = get_settings()
+    api_key = settings.cohere_api_key
     if not api_key or cohere is None:
         return candidates[:top_n]
 
@@ -38,7 +27,7 @@ def rerank_candidates(question: str, candidates: list[dict[str, Any]], top_n: in
             query=question,
             documents=[candidate.get("text") or "" for candidate in candidates],
             top_n=min(top_n, len(candidates)),
-            model="rerank-english-v3.0",
+            model=settings.cohere_rerank_model,
         )
     except Exception:
         return candidates[:top_n]

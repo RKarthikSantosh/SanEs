@@ -39,7 +39,7 @@ datasets
 python-dotenv
 pydantic
 pydantic-settings
-huggingface-hub==0.24.7
+huggingface-hub
 
 # ── Logging ───────────────────────────────────────────────────
 loguru
@@ -51,6 +51,10 @@ numpy
 pandas
 tqdm
 scikit-learn
+
+# ── Experiments ───────────────────────────────────────────────
+pytrec_eval-terrier
+scipy
 
 # ── Testing ───────────────────────────────────────────────────
 pytest
