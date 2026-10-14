@@ -1,1 +1,1 @@
-# SanEs---Hybrid-Retrieval-Enterprise-Document-Intelligence-Engine
+# SanEs: Hybrid-Retrieval-Enterprise-Document-Intelligence-Engine
